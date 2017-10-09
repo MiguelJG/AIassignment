@@ -1,32 +1,31 @@
-#include <iostream>
-#include "Mapa.cpp"
-using namespace std;
+#include "coche.h"
 
-class Coche{
-  vector<int> Sensor;//0 norte 1 sur, 2este, 3 oeste
-  int i,j;
 
-  Coche(int a, int b){//hay que revisar lo relacionado con coche
-    Sensor.resize(4);
-    i = a; j = b;
-  }
+void coche::funcheuristica1(){}
 
-  void funcheuristica1();
-  void funcheuristica2();
-  void funcheuristica3();
+void coche::funcheuristica2(){}
 
-  void algoritmo(int dummy){
-    switch (dummy) {
-      case 1:
-        funcheuristica1();
-        break;
-      case 2:
-        funcheuristica2();
-        break;
-      case 3:
-        funcheuristica3();
-        break;
-    }
-  }
+void coche::funcheuristica3(){}
 
-};
+void coche::algoritmo(int dummy){
+	switch (dummy) {
+	case 1:
+		funcheuristica1();
+		break;
+	case 2:
+		funcheuristica2();
+		break;
+	case 3:
+		funcheuristica3();
+		break;
+	}
+}
+
+coche::coche(int a, int b){
+	Sensor.resize(4);
+	i = a; j = b;
+}
+
+coche::coche(){}
+
+coche::~coche(){}
