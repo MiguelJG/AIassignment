@@ -1,7 +1,15 @@
 #include "Mapa.h"
 #include "coche.h"
+//#include <ncurses.h>
 
+/*void* resizeHandler(int);
+void init(int& height, int& width);
+int scr_h, scr_w;
+*/
 int main() {
+	/*init(scr_h, scr_w);
+	signal(SIGWINCH, resizeHandler)
+	*/	
 	int n,m,ii,ij,fi,fj,type,alg;
 	bool control;
 	cout<< "Introduzca altura mapa:";
@@ -31,3 +39,18 @@ int main() {
 	}while(control);
 
 }
+
+/*void init(int& height, int& width) {
+        initscr();
+        clear();
+        noecho();
+        cbreak();
+        //keypad(stdscr, TRUE);
+        curs_set(0);
+        getmaxyx(stdscr, height, width);
+}
+
+
+void* resizeHandler(int sig){
+	getmxyx(stdscre, scr_h, scr_w);
+}*/
