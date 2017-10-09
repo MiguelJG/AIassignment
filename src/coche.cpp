@@ -1,7 +1,6 @@
 #include "coche.h"
 
-
-bool coche::funcheuristica1(){
+bool coche::funcheuristica1(){//funcion temporal
 	if (contadortemporal < 4){
 		i += 1;
 		j += 1;
@@ -33,9 +32,10 @@ bool coche::algoritmo(int dummy){
 	}
 }
 
-coche::coche(int a, int b){
+coche::coche(int a, int b, int c, int d){
 	Sensor.resize(4);
 	i = a; j = b;
+	fi = c; fj=d;
 }
 
 coche::~coche(){}

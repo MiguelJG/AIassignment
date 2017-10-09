@@ -9,7 +9,7 @@ int scr_h, scr_w;
 int main() {
 	/*init(scr_h, scr_w);
 	signal(SIGWINCH, resizeHandler)
-	*/	
+	*/
 	int n,m,ii,ij,fi,fj,type,alg;
 	bool control;
 	cout<< "Introduzca altura mapa:";
@@ -30,7 +30,7 @@ int main() {
 	cout <<"Algoritmo 1, Agoritmo 2, Algoritmo 3";
 	cin >> alg;
 	alg = 1;//temporal
-	coche car(ii,ij);
+	coche car(ii,ij,fi,fj);
 	do{
 		cout << "----------------------------"<< endl;
 		map.imprimirmapa();
