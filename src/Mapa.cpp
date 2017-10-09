@@ -84,7 +84,7 @@ void Mapa::actualizarmapa(int a, int b){
 	matriz[a][b] = 'X';
 }
 
-vector<int> Mapa::Sensor(int i, int j){
+vector<int> Mapa::Sensor(int i, int j){ //1 obstaculo 0 libre
 	vector<int> v;
 	v.resize(4);
 	if (i == 0) {//norte
