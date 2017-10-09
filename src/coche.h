@@ -5,20 +5,22 @@
 using namespace std;
 
 class coche{
+	int contadortemporal = 0;//para pruebas
 	vector<int> Sensor;//0 norte 1 sur, 2este, 3 oeste
-	int i, j;
+	bool funcheuristica1();
 
-	coche(int a, int b);//hay que revisar lo relacionado con coche
+	bool funcheuristica2();
 
-	void funcheuristica1();
+	bool funcheuristica3();
 
-	void funcheuristica2();
 
-	void funcheuristica3();
-
-	void algoritmo(int dummy);
 
 public:
-	coche();
+	int i, j;//posicion del coche
+
+	bool algoritmo(int dummy);
+
+	coche(int a, int b);
+
 	~coche();
 };

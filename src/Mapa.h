@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include<cstring>
 //casillas vacias: ░ ~
 //coche: X
 //meta: #
@@ -9,7 +10,7 @@
 using namespace std;
 
 class Mapa{
-	vector< vector<char> > matriz;
+
 	int m, n, inicioi, inicioj, fini, finj;
 	//  Coche coche(inicioi,inicioj); <---- hay que ver que hacemos con esto
 
@@ -18,6 +19,7 @@ class Mapa{
 	void obstaculos_aleatorios();
 
 public:
+	vector< vector<char> > matriz;
 
 	Mapa(int _m, int _n, int _inicioi, int _inicioj, int _fini, int _finj, int control);
 

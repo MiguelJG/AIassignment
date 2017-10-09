@@ -1,4 +1,6 @@
 #include "Mapa.h"
+#include <cstdlib>
+#include <time.h>
 
 Mapa::Mapa(){}
 
@@ -24,7 +26,18 @@ void Mapa::obstaculo_a_mano(){
 	}
 }
 
-void Mapa::obstaculos_aleatorios(){}
+void Mapa::obstaculos_aleatorios(){
+	int num,i,j;
+	cout << "Introduzca el numero de obstaculos: ";
+	cin >> num;
+	cout << endl;
+	srand (time(NULL));
+	for(int c = 0; c <= num; c++){
+		i = rand() % m + 0;
+		j = rand() % n + 0;
+		matriz[i][j] = '0';
+	}
+}
 
 Mapa::Mapa(int _m, int _n, int _inicioi, int _inicioj, int _fini, int _finj, int control){
 	m = _m; n = _n;
@@ -44,7 +57,7 @@ Mapa::Mapa(int _m, int _n, int _inicioi, int _inicioj, int _fini, int _finj, int
 		obstaculo_a_mano();
 		break;
 	case 2:
-		//obstaculos_aleatorios();
+		obstaculos_aleatorios();
 		break;
 	}
 	matriz[inicioi][inicioj] = 'X';
@@ -63,12 +76,12 @@ void Mapa::imprimirmapa(){
 void Mapa::actualizarmapa(int a, int b){
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
-			if (matriz[i][j] == 'X') {
-				matriz[i][j] == 'x';
+			if (matriz[i][j] == 88) {
+				matriz[i][j] = '*';
 			}
 		}
 	}
-	matriz[a][b] == 'X';
+	matriz[a][b] = 'X';
 }
 
 vector<int> Mapa::Sensor(int i, int j){
@@ -96,7 +109,7 @@ vector<int> Mapa::Sensor(int i, int j){
 			v[1] = 0;
 		}
 	}
-	if (j == 0) {//ester
+	if (j == 0) {//este
 		v[2] = 1;
 	}
 	else {

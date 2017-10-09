@@ -1,22 +1,34 @@
 #include "coche.h"
 
 
-void coche::funcheuristica1(){}
+bool coche::funcheuristica1(){
+	if (contadortemporal < 4){
+		i += 1;
+		j += 1;
+		contadortemporal++;
+	}
+	else{
+		i = i - 4;
+		j = j - 4;
+		contadortemporal = 0;
+	}
+	return 1;
+}
 
-void coche::funcheuristica2(){}
+bool coche::funcheuristica2(){}
 
-void coche::funcheuristica3(){}
+bool coche::funcheuristica3(){}
 
-void coche::algoritmo(int dummy){
+bool coche::algoritmo(int dummy){
 	switch (dummy) {
 	case 1:
-		funcheuristica1();
+		return funcheuristica1();
 		break;
 	case 2:
-		funcheuristica2();
+		return funcheuristica2();
 		break;
 	case 3:
-		funcheuristica3();
+		return funcheuristica3();
 		break;
 	}
 }
@@ -25,7 +37,5 @@ coche::coche(int a, int b){
 	Sensor.resize(4);
 	i = a; j = b;
 }
-
-coche::coche(){}
 
 coche::~coche(){}
