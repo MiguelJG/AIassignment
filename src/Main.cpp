@@ -8,7 +8,7 @@ int scr_h, scr_w;
 
 int main() {
 	init(scr_h, scr_w);  //Inicialización de pantalla
-	signal(SIGWINCH, resizeHandler) //Detección de ajustado de pantalla para ajustar el mapa de forma acorde
+	signal(SIGWINCH, resizeHandler); //Detección de ajustado de pantalla para ajustar el mapa de forma acorde
 
 	int n,m,ii,ij,fi,fj,type,alg;
 	bool control;
@@ -32,15 +32,10 @@ int main() {
 	alg = 1;//temporal
 	coche car(ii,ij,fi,fj);
 	do{
-<<<<<<< HEAD
-		cout << "----------------------------"<< endl;
-		map.imprimirmapa();
 		//car.actualizar_coche(map.sensor());
-=======
 		//cout << "----------------------------"<< endl;
 		//map.imprimirmapa();
-		map.imprimirmapabien(scr_h, scr_w, car.i, car.j)
->>>>>>> Interfaz
+		map.imprimirmapabien(scr_h, scr_w, car.i, car.j);
 		control = car.algoritmo(alg);
 		map.actualizarmapa(car.i,car.j);
 	}while(control);
