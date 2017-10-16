@@ -1,6 +1,12 @@
 #include "coche.h"
 
-bool coche::Dist_Manhattan(vector<vector <int> > &costos){}
+bool coche::Dist_Manhattan(vector<vector <int> > &costos){
+	for(int p=0;p<costos.size();p++){
+				for(int q=0;q<costos.size();q++){
+					costos[p][q] =  (fabs(fi -i) + fabs(fj -j));
+				}
+			}
+}
 
 bool coche::Dist_euclidea(vector<vector <int> > &costos){
 	for(int i = 0; i < costos.size(); i++){
@@ -37,6 +43,8 @@ bool coche::algoritmo(int dummy,int n,int m){
 
 coche::coche(int a, int b, int c, int d){
 	Sensor.resize(4);
-	i = a; j = b;
-	fi = c; fj=d;
+	i = a;
+	j = b;
+	fi = c;
+	fj=d;
 }

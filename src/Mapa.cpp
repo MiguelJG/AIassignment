@@ -1,6 +1,14 @@
 #include "Mapa.h"
 #include <cstdlib>
 #include <time.h>
+<<<<<<< HEAD
+=======
+
+
+
+
+
+>>>>>>> DesarrolloDaniel
 void Mapa::obstaculo_a_mano(){
 	int num;
 	do {
