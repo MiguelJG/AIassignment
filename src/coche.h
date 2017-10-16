@@ -7,6 +7,8 @@
  * En este fichero se encuentra la descirpcion de la clase coche , asi como sus cabeceras y documentacion de las mismas
  */
 #pragma once
+
+#include <cmath>
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -20,21 +22,21 @@ class coche{
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_Manhattan();
+	bool Dist_Manhattan(vector <vector <int> > &costos);
 
 	/**
 	* @name Distancia Euclidea
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_euclidea();
+	bool Dist_euclidea(vector <vector <int> > &costos);
 
 	/**
 	* @name Distancia Mahalanobis
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_Mahalanobis();
+	bool Dist_Mahalanobis(vector <vector <int> > &costos);
 
 
 

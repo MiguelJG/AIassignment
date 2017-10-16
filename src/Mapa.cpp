@@ -2,9 +2,9 @@
 #include <cstdlib>
 #include <time.h>
 
-Mapa::Mapa(){}
 
-Mapa::~Mapa(){}
+
+
 
 void Mapa::obstaculo_a_mano(){
 	int num;
