@@ -16,25 +16,25 @@ class coche{
 	vector<int> Sensor;//0 norte 1 sur, 2este, 3 oeste
 
 	/**
-	* @name funcheuristica1
+	* @name Distancia Manhattan
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool funcheuristica1();
+	bool Dist_Manhattan();
 
 	/**
-	* @name funcheuristica2
+	* @name Distancia Euclidea
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool funcheuristica2();
+	bool Dist_euclidea();
 
 	/**
-	* @name funcheuristica3
+	* @name Distancia Mahalanobis
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool funcheuristica3();
+	bool Dist_Mahalanobis();
 
 
 

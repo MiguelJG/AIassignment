@@ -34,6 +34,7 @@ int main() {
 	do{
 		cout << "----------------------------"<< endl;
 		map.imprimirmapa();
+		//car.actualizar_coche(map.sensor());
 		control = car.algoritmo(alg);
 		map.actualizarmapa(car.i,car.j);
 	}while(control);
