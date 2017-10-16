@@ -9,6 +9,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <math.h>
 using namespace std;
 
 class coche{
@@ -20,21 +21,21 @@ class coche{
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_Manhattan();
+	bool Dist_Manhattan(vector<vector <int> > &costos);
 
 	/**
 	* @name Distancia Euclidea
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_euclidea();
+	bool Dist_euclidea(vector<vector <int> > &costos);
 
 	/**
 	* @name Distancia Mahalanobis
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_Mahalanobis();
+	bool Dist_Mahalanobis(vector<vector <int> > &costos);
 
 
 
@@ -49,7 +50,7 @@ public:
 	* @param [in] int dummy , valor que selecciona una de las 3 funciones heuristicas
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool algoritmo(int dummy);
+	bool algoritmo(int dummy, int n, int m);
 
 	/**
 	* @name Constructor
