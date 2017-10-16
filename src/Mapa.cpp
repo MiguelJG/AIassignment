@@ -1,14 +1,6 @@
 #include "Mapa.h"
 #include <cstdlib>
 #include <time.h>
-<<<<<<< HEAD
-=======
-
-
-
-
-
->>>>>>> DesarrolloDaniel
 void Mapa::obstaculo_a_mano(){
 	int num;
 	do {
@@ -79,7 +71,7 @@ void Mapa::imprimirmapa(){
 
 void Mapa::imprimirmapabien(int h, int w, int car_i, int car_j){
 	for (int i = h/2-h; i < h-h/2; i++){
-		cout << endl << "/r";
+		cout << endl << "\r";
 		if(car_i + i < 0 || car_i + i >= matriz.size())
 			for (int j = 0; j < w; j++)
 				cout << " ";
