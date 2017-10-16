@@ -1,5 +1,5 @@
 CC=g++
-CXXFLAGS=-g -fpermissive -Wmultichar -std=gnu++11
+CXXFLAGS=-g -fpermissive -Wmultichar -std=gnu++11 -lncurses
 
 OBJS = Main.o coche.o Mapa.o
 

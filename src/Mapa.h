@@ -80,4 +80,6 @@ public:
 	* @brief Retorna por referencia la posicion inicial del coche
 	*/
 	void getinicio(int &a, int &b);  // la posicion inicial para el coche
+
+	void imprimirmapabien(int h, int w, int car_i, int car_j);
 };

@@ -5,7 +5,7 @@ bool coche::Dist_Manhattan(vector<vector <int> > &costos){}
 bool coche::Dist_euclidea(vector<vector <int> > &costos){
 	for(int i = 0; i < costos.size(); i++){
 		for(int j = 0; j < costos[i].size();j++){
-			costos[i][j] = sqrt(pow((i - fi),2) + pow((j - fj),2))
+			costos[i][j] = sqrt(pow((i - fi),2) + pow((j - fj),2));
 		}
 	}
 }

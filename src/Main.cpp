@@ -6,9 +6,11 @@ void* resizeHandler(int);
 void init(int& height, int& width);
 int scr_h, scr_w;
 
+using namespace std;
+
 int main() {
 	init(scr_h, scr_w);  //Inicialización de pantalla
-	signal(SIGWINCH, resizeHandler); //Detección de ajustado de pantalla para ajustar el mapa de forma acorde
+	//signal(SIGWINCH, resizeHandler); //Detección de ajustado de pantalla para ajustar el mapa de forma acorde
 
 	int n,m,ii,ij,fi,fj,type,alg;
 	bool control;
@@ -36,7 +38,7 @@ int main() {
 		//cout << "----------------------------"<< endl;
 		//map.imprimirmapa();
 		map.imprimirmapabien(scr_h, scr_w, car.i, car.j);
-		control = car.algoritmo(alg);
+		control = car.algoritmo(alg,n,m);
 		map.actualizarmapa(car.i,car.j);
 	}while(control);
 	endwin();  //Restauración configuración por defecto pantalla
@@ -53,6 +55,6 @@ void init(int& height, int& width) {
 }
 
 
-void* resizeHandler(int sig){
-	getmxyx(stdscre, scr_h, scr_w);
-}
+/*void* resizeHandler(int sig){
+	getmaxyx(stdscr, scr_h, scr_w);
+}*/
