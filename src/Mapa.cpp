@@ -73,6 +73,32 @@ void Mapa::imprimirmapa(){
 	}
 }
 
+
+void Mapa::imprimirmapabien(int h, int w, int car_i, int car_j){
+	for (int i = h/2-h; i < h-h/2; i++){
+		cout << endl << "/r";
+		if(car_i + i < 0 || car_i + i >= matriz.size())
+			for (int j = 0; j < w; j++)
+				cout << " ";
+		else
+			for (int j = w/2-w; j < w-w/2; j++){
+				while(car_j + j < 0){
+					cout << " ";
+					j++;
+				}
+				if (car_j + j >= matriz[0].size()){
+					while(j < w-w/2){
+						cout << " ";
+						j++;
+					}
+				}
+				else
+					cout << matriz[car_i + i][car_j + j];
+			}
+	}
+}
+
+
 void Mapa::actualizarmapa(int a, int b){
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {

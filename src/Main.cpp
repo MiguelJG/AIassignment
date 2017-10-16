@@ -1,15 +1,15 @@
 #include "Mapa.h"
 #include "coche.h"
-//#include <ncurses.h>
+#include <ncurses.h>
 
-/*void* resizeHandler(int);
+void* resizeHandler(int);
 void init(int& height, int& width);
 int scr_h, scr_w;
-*/
+
 int main() {
-	/*init(scr_h, scr_w);
-	signal(SIGWINCH, resizeHandler)
-	*/
+	init(scr_h, scr_w);  //Inicialización de pantalla
+	signal(SIGWINCH, resizeHandler) //Detección de ajustado de pantalla para ajustar el mapa de forma acorde
+
 	int n,m,ii,ij,fi,fj,type,alg;
 	bool control;
 	cout<< "Introduzca altura mapa:";
@@ -32,15 +32,16 @@ int main() {
 	alg = 1;//temporal
 	coche car(ii,ij,fi,fj);
 	do{
-		cout << "----------------------------"<< endl;
-		map.imprimirmapa();
+		//cout << "----------------------------"<< endl;
+		//map.imprimirmapa();
+		map.imprimirmapabien(scr_h, scr_w, car.i, car.j)
 		control = car.algoritmo(alg);
 		map.actualizarmapa(car.i,car.j);
 	}while(control);
-
+	endwin();  //Restauración configuración por defecto pantalla
 }
 
-/*void init(int& height, int& width) {
+void init(int& height, int& width) {
         initscr();
         clear();
         noecho();
@@ -53,4 +54,4 @@ int main() {
 
 void* resizeHandler(int sig){
 	getmxyx(stdscre, scr_h, scr_w);
-}*/
+}

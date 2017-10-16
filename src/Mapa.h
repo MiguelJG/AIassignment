@@ -9,7 +9,8 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include<cstring>
+#include <cstring>
+#include "coche.h"
 //casillas vacias: ░ ~
 //coche: X
 //meta: #
