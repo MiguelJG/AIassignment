@@ -15,11 +15,14 @@
 //coche: X
 //meta: #
 //obstaculo █ 0
+
 using namespace std;
 
 class Mapa{
 
 	int m, n, inicioi, inicioj, fini, finj;
+
+	void muestra(char a);
 
 	/**
 	* @name obstaculo_a_mano

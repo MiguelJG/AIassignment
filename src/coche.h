@@ -12,6 +12,7 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+
 using namespace std;
 
 class coche{
@@ -23,21 +24,21 @@ class coche{
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_Manhattan(vector <vector <int> > &costos);
+	bool Dist_Manhattan(int i, int j);
 
 	/**
 	* @name Distancia Euclidea
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_euclidea(vector <vector <int> > &costos);
+	bool Dist_euclidea(int i, int j);
 
 	/**
 	* @name Distancia Mahalanobis
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_Mahalanobis(vector <vector <int> > &costos);
+	bool Dist_Mahalanobis(int i, int j);
 
 
 

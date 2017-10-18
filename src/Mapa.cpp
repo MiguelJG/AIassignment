@@ -1,6 +1,27 @@
 #include "Mapa.h"
 #include <cstdlib>
 #include <time.h>
+
+#define BVerde "\x1B[102m" //colores
+#define FVerde "\x1B[32m"
+#define FNegro "\x1B[30m"
+#define FRojo "\x1B[31m"
+#define FMagenta "\x1B[35m"
+#define FRosa "\x1B[95m"
+
+void Mapa::muestra(char a){ //funcion para mostrar los colores
+		if(a == 'X')
+			cout << BVerde << FRojo << a;
+		else if(a == '~')
+			cout << BVerde << FVerde << a;
+		else if(a == '0')
+			cout << BVerde << FNegro << a;
+		else if(a == '*')
+			cout << BVerde << FMagenta << a;
+		else if(a == '#')
+				cout << BVerde << FRosa << a;
+};
+
 void Mapa::obstaculo_a_mano(){
 	int num;
 	do {
@@ -23,9 +44,10 @@ void Mapa::obstaculo_a_mano(){
 
 void Mapa::obstaculos_aleatorios(){
 	int num,i,j;
-	cout << "Introduzca el numero de obstaculos: ";
+	cout << "Introduzca el porcentaje de obstaculos: ";
 	cin >> num;
 	cout << endl;
+	num = m * n * num / 100;
 	srand (time(NULL));
 	for(int c = 0; c <= num; c++){
 		i = rand() % m + 0;
@@ -56,7 +78,7 @@ Mapa::Mapa(int _m, int _n, int _inicioi, int _inicioj, int _fini, int _finj, int
 		break;
 	}
 	matriz[inicioi][inicioj] = 'X';
-	matriz[fini - 1][finj - 1] = '#';
+	matriz[fini][finj] = '#';
 }
 
 void Mapa::imprimirmapa(){
@@ -74,21 +96,21 @@ void Mapa::imprimirmapabien(int h, int w, int car_i, int car_j){
 		cout << endl << "\r";
 		if(car_i + i < 0 || car_i + i >= matriz.size())
 			for (int j = 0; j < w; j++)
-				cout << " ";
+				cout << BVerde << " ";
 		else
 			for (int j = w/2-w; j < w-w/2; j++){
 				while(car_j + j < 0){
-					cout << " ";
+					cout << BVerde << " ";
 					j++;
 				}
 				if (car_j + j >= matriz[0].size()){
 					while(j < w-w/2){
-						cout << " ";
+						cout << BVerde << " ";
 						j++;
 					}
 				}
 				else
-					cout << matriz[car_i + i][car_j + j];
+					muestra(matriz[car_i + i][car_j + j]);
 			}
 	}
 }

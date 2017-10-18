@@ -6,6 +6,8 @@ void* resizeHandler(int);
 void init(int& height, int& width);
 int scr_h, scr_w;
 
+#define Default "\x1B[49m"
+
 using namespace std;
 
 int main() {
@@ -44,6 +46,7 @@ int main() {
 		map.actualizarmapa(car.i,car.j);
 	}while(control);
 	endwin();  //Restauración configuración por defecto pantalla
+	cout << Default;
 }
 
 void init(int& height, int& width) {
