@@ -17,35 +17,40 @@ using namespace std;
 
 class coche{
 	int contadortemporal = 0;//para pruebas
-	vector<int> Sensor;//0 norte 1 sur, 2este, 3 oeste
+
+
 
 	/**
 	* @name Distancia Manhattan
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_Manhattan(int i, int j);
+	int Dist_Manhattan(int i, int j);
 
 	/**
 	* @name Distancia Euclidea
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_euclidea(int i, int j);
+	int Dist_euclidea(int i, int j);
 
 	/**
 	* @name Distancia Mahalanobis
 	* @brief ejecuta 1 iteración de la funcion heurística en concreto
 	* @retval bool que indica 1 si todo correcto, 0 si debe parar
 	*/
-	bool Dist_Mahalanobis(int i, int j);
+	int Dist_Mahalanobis(int i, int j);
 
 
 
 public:
 	int i, j;//posicion del coche
+	int ia, ja; // posicion anterior;
 	int fi,fj;//posicion meta
+	bool fin;
 
+vector<int> Distancia; //distancias de las posicion que le rodean con respecto a la meta
+vector<int> Sensor;//0 norte 1 sur, 2este, 3 oeste
 	/**
 	* @name algoritmo
 	* @brief Ejecuta 1 iteracion de 1 funcion heuristica en concreto
@@ -65,5 +70,9 @@ public:
 	* @param [in] int d posicion j inicial de la meta
 	*/
 	coche(int a, int b, int c, int d);
+
+	int seleccion(int dummy, int i, int j);
+
+	void act_distancias(int dummy,int n, int m);
 
 };

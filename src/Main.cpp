@@ -33,17 +33,17 @@ int main() {
 	cin >> alg;
 	alg = 1;//temporal
 	coche car(ii,ij,fi,fj);
-	cout << scr_h<<" " << scr_w<<" "<< car.i<<" "<< car.j << endl;
 	init(scr_h, scr_w);  //Inicialización de pantalla
 	//signal(SIGWINCH, resizeHandler); //Detección de ajustado de pantalla para ajustar el mapa de forma acorde
 	do{
 		//car.actualizar_coche(map.sensor());
 		//cout << "----------------------------"<< endl;
 		//map.imprimirmapa();
-		cout << scr_h<<" " << scr_w<<" "<< car.i<<" "<< car.j << endl;
-		map.imprimirmapabien(scr_h, scr_w, car.i, car.j);
+		cout << "Aqui" << endl;
+		car.Distancia =  map.Sensor(car.i , car.j);
 		control = car.algoritmo(alg,n,m);
 		map.actualizarmapa(car.i,car.j);
+		map.imprimirmapabien(scr_h, scr_w, car.i, car.j);
 	}while(control);
 	endwin();  //Restauración configuración por defecto pantalla
 	cout << Default;
@@ -51,18 +51,12 @@ int main() {
 
 void init(int& height, int& width) {
         initscr();
-				cout << scr_h<<" " << scr_w<<" "<<" f " << endl;
         clear();
-				cout << scr_h<<" " << scr_w<<" "<< " b " << endl;
         noecho();
-				cout << scr_h<<" " << scr_w<<" "<<" v "<<  endl;
         cbreak();
-				cout << scr_h<<" " << scr_w<<" c " << endl;
         //keypad(stdscr, TRUE);
         //curs_set(0);
-				cout << scr_h<<" " << scr_w<<" "<< " - " << endl;
         getmaxyx(stdscr, height, width);
-				cout << scr_h<<" " << scr_w<<" + " << endl;
 }
 
 
