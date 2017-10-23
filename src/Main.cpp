@@ -37,7 +37,11 @@ int main() {
 	init(scr_h, scr_w);  //Inicialización de pantalla
 	//signal(SIGWINCH, resizeHandler); //Detección de ajustado de pantalla para ajustar el mapa de forma acorde
 	do{
-		car.Distancia =  map.Sensor(car.i , car.j);
+		car.Sensor =  map.Sensor(car.i , car.j);
+		for(int x = 0; x < car.Distancia.size(); x++){
+			cout << car.Distancia[x] << " ";
+		}
+		cout << endl;
 		control = car.algoritmo(alg,n,m);
 		map.actualizarmapa(car.i,car.j);
 		map.imprimirmapabien(scr_h, scr_w, car.i, car.j);

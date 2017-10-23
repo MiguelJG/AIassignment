@@ -33,8 +33,6 @@ int coche::seleccion(int dummy, int i, int j){
 
 
 void coche::act_distancias(int dummy,int n, int m){
-	Distancia.clear();
-	Distancia.resize(4);
 		if (Sensor[0] == 1) {
 			Distancia[0] =  10000;
 		}
