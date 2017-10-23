@@ -134,7 +134,7 @@ vector<int> Mapa::Sensor(int i, int j){ //1 obstaculo 0 libre
 		v[0] = 1;
 	}
 	else {
-		if (matriz[i - 1][j] == '0') {
+		if (matriz[i - 1][j] == '0' || matriz[i - 1][j] == '*') {
 			v[0] = 1;
 		}
 		else {
@@ -145,7 +145,7 @@ vector<int> Mapa::Sensor(int i, int j){ //1 obstaculo 0 libre
 		v[1] = 1;
 	}
 	else {
-		if (matriz[i + 1][j] == '0') {
+		if (matriz[i + 1][j] == '0'|| matriz[i + 1][j] == '*') {
 			v[1] = 1;
 		}
 		else {
@@ -156,7 +156,7 @@ vector<int> Mapa::Sensor(int i, int j){ //1 obstaculo 0 libre
 		v[2] = 1;
 	}
 	else {
-		if (matriz[i][j - 1] == '0') {
+		if (matriz[i][j - 1] == '0'|| matriz[i][j-1] == '*') {
 			v[2] = 1;
 		}
 		else {
@@ -167,7 +167,7 @@ vector<int> Mapa::Sensor(int i, int j){ //1 obstaculo 0 libre
 		v[3] = 1;
 	}
 	else {
-		if (matriz[i][j + 1] == '0') {
+		if (matriz[i][j + 1] == '0'|| matriz[i ][j +1] == '*') {
 			v[3] = 1;
 		}
 		else {

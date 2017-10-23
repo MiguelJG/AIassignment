@@ -33,6 +33,8 @@ int coche::seleccion(int dummy, int i, int j){
 
 
 void coche::act_distancias(int dummy,int n, int m){
+		Distancia.clear();
+		Distancia.resize(4);
 		if (Sensor[0] == 1) {
 			Distancia[0] =  10000;
 		}
@@ -67,8 +69,7 @@ bool coche::algoritmo(int dummy,int n,int m){
 	Distancia.resize(4);
 	act_distancias(dummy,n,m);
 	int min = Distancia[0];
-	int minindex = 0;
-
+	int minindex = - 1;
 	for(int a = 0; a < Distancia.size(); a++){
 		if(Distancia[a] < min){
 			min = Distancia[a];
