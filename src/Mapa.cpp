@@ -56,15 +56,15 @@ void Mapa::obstaculos_aleatorios(){
 	}
 }
 
-Mapa::Mapa(int _m, int _n, int _inicioi, int _inicioj, int _fini, int _finj, int control){
+Mapa::Mapa(int _n, int _m, int _inicioi, int _inicioj, int _fini, int _finj, int control){
 	m = _m; n = _n;
 	inicioi = _inicioi; inicioj = _inicioj;
 	fini = _fini; finj = _finj;
-	matriz.resize(m);//se hace la matriz del tama�o correcto
-	for (int i = 0; i < m; i++) {
-		matriz[i].resize(n);
+	matriz.resize(n);//se hace la matriz del tama�o correcto
+	for (int i = 0; i < n; i++) {
+		matriz[i].resize(m);
 	}
-	for (int i = 0; i < m; i++) {
+	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			matriz[i][j] = '~';
 		}
@@ -132,58 +132,46 @@ vector<int> Mapa::Sensor(int i, int j){ //1 obstaculo 0 libre
 	v.resize(4);
 	if (i == 0) {//norte
 		v[0] = 1;
-		cout << "1" << endl;
 	}
 	else {
 		if (matriz[i - 1][j] == '0') {
 			v[0] = 1;
-			cout << "2" << endl;
 		}
 		else {
 			v[0] = 0;
-			cout << "3" << endl;
 		}
 	}
 	if (i == (n - 1)) {//sur
 		v[1] = 1;
-		cout << "4" << endl;
 	}
 	else {
 		if (matriz[i + 1][j] == '0') {
 			v[1] = 1;
-			cout << "5" << endl;
 		}
 		else {
 			v[1] = 0;
-			cout << "6" << endl;
 		}
 	}
 	if (j == 0) {//este
 		v[2] = 1;
-		cout << "7" << endl;
 	}
 	else {
 		if (matriz[i][j - 1] == '0') {
 			v[2] = 1;
-			cout << "8" << endl;
 		}
 		else {
 			v[2] = 0;
-			cout << "9" << endl;
 		}
 	}
 	if (i == (m - 1)) {//oeste
 		v[3] = 1;
-		cout << "10" << endl;
 	}
 	else {
 		if (matriz[i][j + 1] == '0') {
 			v[3] = 1;
-			cout << "11" << endl;
 		}
 		else {
 			v[3] = 0;
-			cout << "12" << endl;
 		}
 	}
 	return v;

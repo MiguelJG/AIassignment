@@ -20,7 +20,7 @@ using namespace std;
 
 class Mapa{
 
-	int m, n, inicioi, inicioj, fini, finj;
+	int n, m, inicioi, inicioj, fini, finj;
 
 	void muestra(char a);
 
@@ -51,7 +51,7 @@ public:
 	* @param [in] int _finj posicion j inicial de la meta
 	* @param [in] int control indica la amera de generar obstaculos (1 a mano, 2 aleatorios)
 	*/
-	Mapa(int _m, int _n, int _inicioi, int _inicioj, int _fini, int _finj, int control);
+	Mapa(int _n, int _m, int _inicioi, int _inicioj, int _fini, int _finj, int control);
 
 	/**
 	* @name imprimirmapa

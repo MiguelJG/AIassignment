@@ -33,50 +33,35 @@ int coche::seleccion(int dummy, int i, int j){
 
 
 void coche::act_distancias(int dummy,int n, int m){
-	if (i == 0) {//norte
-		Distancia[0] =  2147483647;
-	}
-	else {
+	Distancia.clear();
+	Distancia.resize(4);
 		if (Sensor[0] == 1) {
-			Distancia[0] =  2147483647;
+			Distancia[0] =  10000;
 		}
 		else {
 			Distancia[0] = seleccion(dummy, i - 1, j);//aqui va el switch
 		}
-	}
-	if (i == (n - 1)) {//sur
-		Distancia[1] = 2147483647;
-	}
-	else {
+
 		if (Sensor[1] == 1) {
-			Distancia[1] = 2147483647;
+			Distancia[1] = 10000;
 		}
 		else {
 			Distancia[1] = seleccion(dummy, i + 1, j);//aqui va el switch
 		}
-	}
-	if (j == 0) {//este
-		Distancia[2] = 2147483647;
-	}
-	else {
+
 		if (Sensor[2] == 1) {
-			Distancia[2] =2147483647;
+			Distancia[2] =10000;
 		}
 		else {
 			Distancia[2] = seleccion(dummy, i , j - 1);//switch
 		}
-	}
-	if (i == (m - 1)) {//oeste
-		Distancia[3] = 2147483647;
-	}
-	else {
 		if (Sensor[3] == 1) {
-			Distancia[3] = 2147483647;
+			Distancia[3] = 10000;
 		}
 		else {
 			Distancia[3] = seleccion(dummy, i, j + 1);//switch
 		}
-	}
+
 }
 
 bool coche::algoritmo(int dummy,int n,int m){
@@ -85,24 +70,26 @@ bool coche::algoritmo(int dummy,int n,int m){
 	act_distancias(dummy,n,m);
 	int min = Distancia[0];
 	int minindex = 0;
-	for(int i = 0; i < Distancia.size(); i++){
-		if(Distancia[i] < min){
-			min = Distancia[i];
-			minindex = i;
+
+	for(int a = 0; a < Distancia.size(); a++){
+		if(Distancia[a] < min){
+			min = Distancia[a];
+			minindex = a;
 		}
 	}
-	switch (i) {
+	ia = i; ja = j;
+	switch (minindex) {
 		case 0:
-			i = i -1;
+			i = i - 1;
 			break;
 		case 1:
-		i = i +1;
+		i = i + 1;
 			break;
 		case 2:
-		j = j-1;
+		j = j - 1;
 			break;
 		case 3:
-		j = j+1;
+		j = j + 1;
 			break;
 	}
 	if (i == fi && j == fj){

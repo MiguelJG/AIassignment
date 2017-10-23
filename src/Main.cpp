@@ -1,6 +1,7 @@
 #include "Mapa.h"
 #include "coche.h"
 #include <ncurses.h>
+#include <unistd.h>
 
 void* resizeHandler(int);
 void init(int& height, int& width);
@@ -36,14 +37,11 @@ int main() {
 	init(scr_h, scr_w);  //Inicialización de pantalla
 	//signal(SIGWINCH, resizeHandler); //Detección de ajustado de pantalla para ajustar el mapa de forma acorde
 	do{
-		//car.actualizar_coche(map.sensor());
-		//cout << "----------------------------"<< endl;
-		//map.imprimirmapa();
-		cout << "Aqui" << endl;
 		car.Distancia =  map.Sensor(car.i , car.j);
 		control = car.algoritmo(alg,n,m);
 		map.actualizarmapa(car.i,car.j);
 		map.imprimirmapabien(scr_h, scr_w, car.i, car.j);
+		usleep(500*1000);
 	}while(control);
 	endwin();  //Restauración configuración por defecto pantalla
 	cout << Default;
